@@ -399,6 +399,10 @@ mark,
   max-width: 100%;
   height: auto; }
 
+.img-fluid1 {
+  max-width: 50%;
+  height: auto; }
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -7218,6 +7222,8 @@ button.bg-dark:focus {
 
 .text-white {
   color: black !important; }
+  .text-white1 {
+    color: white !important; }
 
 .text-primary {
   color: #7f4782 !important; }

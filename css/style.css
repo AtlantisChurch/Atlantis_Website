@@ -947,7 +947,9 @@ h1, h2, h3, h4, h5,
     transform: translate(-50%, -50%); }
 
 .block-testimony-1 {
-  padding: 20px; }
+  display: grid;
+    position: inherit;
+    width: 50%; }
   .block-testimony-1 blockquote {
     background: #fff;
     padding: 30px;
