@@ -8,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
+    
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
@@ -22,7 +23,20 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+         $.ajax({
+            url:'https://dailyverses.net/get/verse?language=niv&isdirect=1&url=' + window.location.hostname,
+            dataType: 'JSONP',
+            success:function(json){
+               $(".dailyVersesWrapper").prepend(json.html);
+            }
+         });
+      });
+   </script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
@@ -45,7 +59,7 @@
           
             
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary">ACOTN</a>
+              <a href="index.html" class="text-black"><span class="text-primary" > <i class="fas fa-cross"></i>ACOTN</a>
             </div>
             
               <nav class="site-navigation text-center ml-auto" role="navigation">
@@ -53,13 +67,18 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="#home-section" class="nav-link">Home</a></li>
                   <li><a href="#departments-section" class="nav-link">About</a></li>
-                  <li><a href="#about-section" class="nav-link">Gallery</a></li>
-                  <li><a href="#services-section" class="nav-link">Leaders</a></li>
+                  <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                  <li><a href="#team-section" class="nav-link">Leaders</a></li>
                   <li><a href="#press-section" class="nav-link">Events</a></li>                  
-                  <li><a href="#blog-section" class="nav-link">Voting</a></li>
+                  <li><a href="#" class="nav-link" id="voting" onclick="vote()">Voting</a></li>
                   <li><a href="#contact-section" class="nav-link">Contact</a></li>
                 </ul>
               </nav>
+              <script>
+                function vote(){
+                alert('Page is Under Contruction');
+              }
+              </script>
           
             
 
@@ -81,7 +100,7 @@
             <div class="col-md-12 col-lg-7 text-center">
               <h1>Atlantis Church Of The Nazarene</h1>      
               <p>Rebuilding The Walls</p>
-              <p><a href="#" class="btn btn-white-outline border-w-2 btn-md">Get in touch</a></p>
+              <p><a href="#contact-section" class="btn btn-white-outline border-w-2 btn-md">Get in touch</a></p>
             </div>
           </div>
         </div>
@@ -94,7 +113,7 @@
             <div class="col-md-12 col-lg-7 text-center">
               <h1>Atlantis Church Of The Nazarene</h1>      
               <p>Rebuilding The Walls</p>    
-              <p><a href="#" class="btn btn-white-outline border-w-2 btn-md">Get in touch</a></p>
+              <p><a href="#contact-section" class="btn btn-white-outline border-w-2 btn-md">Get in touch</a></p>
             </div>
           </div>
         </div>
@@ -111,19 +130,36 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <img src="images/church.jpg" alt="Image" class="img-fluid mb-3" style="height: 215px;">
             <h3 class="text-primary h4 mb-2">About</h3>
-            <p>Church History goes here</p>
+            <p>Since our beginnings in 1911, our mission has always been, and will always be, 
+              to reach out to those around us in Christ-like ways, making Christlike disciples in the Kansas City area, 
+              and around the world. We have found that through intentionally orienting ourselves around 
+              <strong>four ways</strong> of being Christ's followers, we can most effectively carry out that mission: <strong>worship</strong>:
+              the daily surrender of our lives to Christ in adoration and thankfulness for what he has done for 
+              us; <strong>community</strong>: building relationships with one another as the body of Christ, opening our hands
+              and hearts to those inside and outside our local church; <strong>discipleship</strong>: being intentional about making
+               the most of every opportunity to know more about Christ and what it looks like to follow Him; and 
+               <strong>compassion</strong>: going into our world with the love of Christ.</p>
             <p><a href="#">Read more</a></p>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <img src="images/vision.jpg" alt="Image" class="img-fluid mb-3" style="height: 215px;">
             <h3 class="text-primary h4 mb-2">Vision</h3>
-            <p>Church Vision goes here</p>
+            <p><strong>At Atlantis Church of the Nazarene, we desire to follow the example of Christ.  
+              We love God, love others, and want to facilitate change for the good in our community.</strong>
+            
+              So we love <strong>Worshipping God</strong>, we make it our goal to <strong>love others</strong> and our 
+              aim is to <strong>serve our community</strong>.
+            </p>
             <p><a href="#">Read more</a></p>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <img src="images/mission.jpg" alt="Image" class="img-fluid mb-3" style="height: 215px;">
             <h3 class="text-primary h4 mb-2">Mission</h3>
-            <p>Church Mission Goes here</p>
+            <p>Atlantis church of the Nazarene exists on the belief that the Lord makes us as a 
+              city on a mountain that cannot be hidden. Therefore our mission is to equip 
+              His people for works of service so that the body of Christ (His Kingdom) be built up. 
+              Our members are encouraged to GROW in their 
+              relationship with God, to <strong></strong>CONNECT with others, to <stong>SERVE</stong> with others and <strong>SHARE</strong> the Lord’s message. <strong>Matthew 5:14</strong></p>
             <p><a href="#">Read more</a></p>
           </div>
         </div>
@@ -176,6 +212,7 @@
             <p><a href="#">Read More</a></p>
           </div>
         </div>
+        <!-- Description on how many workers are there
         <div class="row">
           <div class="col-md-6 mb-4 col-lg-0 col-lg-3">
             <div class="block-counter-1">
@@ -203,9 +240,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
-    <div class="site-section bg-light" id="about-section">
+    <div class="site-section bg-light" id="gallery">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12">
@@ -318,7 +355,7 @@
               </figure>
               <h3 class="font-size-20 text-white">Rachael Pekeur</h3>
               <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">SDMI</span>
-              <p class="px-3 mb-3">Message from our SDMi Leader</p>
+              <p class="px-3 mb-3">Message from our SDMI Leader</p>
               <div class="block-social-1">
                 <a href="#" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-facebook"></span></a>
                 <a href="#" class="btn border-w-2 rounded primary-primary-outline--hover"><span class="icon-twitter"></span></a>
@@ -374,7 +411,7 @@
             <ul class="list-unstyled">
               <li class="mb-4 d-block d-md-flex">
                 <div class="mr-5 mb-4">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                  <img src="images/high_tea.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
                   <h2 class="h4"><a href="press-single.html" class="text-black">NEED TO GET EVENTS</a></h2>
@@ -385,7 +422,7 @@
 
               <li class="mb-4 d-block d-md-flex">
                 <div class="mr-5 mb-4">
-                  <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                  <img src="images/half_night_pray.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
                   <h2 class="h4"><a href="press-single.html" class="text-black">NEED TO GET EVENTS</a></h2>
@@ -396,7 +433,7 @@
 
               <li class="mb-4 d-block d-md-flex">
                 <div class="mr-5 mb-4">
-                  <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                  <img src="images/easter_sunday.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
                   <h2 class="h4"><a href="press-single.html" class="text-black">NEED TO GET EVENTS</a></h2>
@@ -411,56 +448,21 @@
       </div>
     </div>
 
-    <div class="site-section block-13 overlay bg-image" id="testimonials-section" data-aos="fade" style="background-image: url('images/hero_1.jpg');">
+    <div class="site-section block-13 overlay bg-image" id="testimonials-section" data-aos="fade" style="background-image: url('images/Bible.jpg');">
       <div class="container">
         
         <div class="text-center mb-5">
           <div class="block-heading-1">
-            <h2 class="text-white">Bible Sciptures</h2>
+            <h2 class="text-white1">Bible Sciptures</h2>
           </div>
         </div>
 
-        <div class="owl-carousel nonloop-block-13">
-          <div>
-            <div class="block-testimony-1 text-center">
-              
-              <blockquote class="mb-4">
-                <p>&ldquo;For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.&rdquo;</p>
-              </blockquote>
-              <h3 class="font-size-20 text-white">John 3:16</h3>
-            </div>
-          </div>
-
-          <div>
+        <div class="owl-carousel ">
             <div class="block-testimony-1 text-center">
               <blockquote class="mb-4">
-                <p>&ldquo;Be still, and know that I am God. I will be exalted among the nations, I will be exalted in the earth!&rdquo;</p>
+                <p><div class="dailyVersesWrapper"></div></p>
               </blockquote>
-              <h3 class="font-size-20 text-white">Psalm 46:10  </h3>
             </div>
-          </div>
-
-          <div>
-            <div class="block-testimony-1 text-center">
-              <blockquote class="mb-4">
-                <p>&ldquo;if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move. Nothing will be impossible for you.&rdquo;</p>
-              </blockquote>
-
-           
-              <h3 class="font-size-20 text-white">Matthew 17:20</h3>
-            </div>
-          </div>
-
-          <div>
-            <div class="block-testimony-1 text-center">
-              <blockquote class="mb-4">
-                <p>&ldquo;He was delivered over to death for our sins and was raised to life for our justification.&rdquo;</p>
-              </blockquote>
-              <h3 class="font-size-20 text-white">Romans 4:25</h3>
-            </div>
-          </div>
-
-
         </div>
 
       </div>
@@ -479,11 +481,11 @@
         <div class="row">
           <div class="col-lg-6">
             <div>
-              <a href="#" class="mb-4 d-block"><img src="images/img_1.jpg" alt="Image" class="img-fluid rounded"></a>
-              <h2><a href="#">NEED TO GET EVENTS</a></h2>
+              <a href="#" class="mb-4 d-block"><img src="images/youth_theme.jpg" alt="Image" class="img-fluid1 rounded"></a>
+              <h2><a href="#">Youth Event</a></h2>
               <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">March 12, 2020</span> By <a href="#" class="by">Youth</a></p>
               <p>Youth Has offical Started for the year 2021, coming back with a Bang.</p>
-              <video width="320" height="240" controls>
+              <video width="320" height="240" controls muted>
                 <source src="./images/VID-20210313-WA0023.mp4" type="video/mp4" style="width: 100%;">
                 <source src="movie.ogg" type="video/ogg">
                 Your browser does not support the video tag.
@@ -493,8 +495,8 @@
           </div>
           <div class="col-lg-6">
             <div>
-              <a href="#" class="mb-4 d-block"><img src="images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
-              <h2><a href="#">NEED TO GET EVENTS</a></h2>
+              <a href="#" class="mb-4 d-block"><img src="images/sunday_school_event.jpg" alt="Image" class="img-fluid1 rounded"></a>
+              <h2><a href="#">Sunday School Service</a></h2>
               <p class="text-muted mb-3 text-uppercase small"><span class="mr-2">January 18, 2019</span> By <a href="#" class="by">Depart</a></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat et suscipit iste libero neque. Vitae quidem ducimus voluptatibus nemo cum odio ab enim nisi, itaque, libero fuga veritatis culpa quis!</p>
               <p><a href="#">Read More</a></p>
@@ -516,7 +518,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="place-content: center;">
           <div class="col-lg-6 mb-5">
             <form method="POST"  action="https://formspree.io/f/mdopqlbr">
               <div class="form-group row">
@@ -546,13 +548,14 @@
               </div>
             </form>
           </div>
-          <div class="col-lg-4 ml-auto">
+          <!-- Somone Contact info
+            <div class="col-lg-4 ml-auto">
             <h2 class="text-black">Need to know more on details? Call Us <a href="tel://27814920259">+27 ??? ???</a></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, distinctio! Harum quibusdam nisi, illum nulla aspernatur <a href="#">voluptas nam praesentium</a> aut quidem aperiam, quae non tempora recusandae voluptatibus fugit impedit.</p>
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
 
     <footer class="site-footer">
@@ -617,6 +620,7 @@
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/aos.js"></script>
+  
 
   <script src="js/main.js"></script>
     
